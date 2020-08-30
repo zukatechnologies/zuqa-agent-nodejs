@@ -33,6 +33,10 @@ module.exports = function (expectations = [], done) {
     sendMetricSet (metricset, cb) {
       this._write({ metricset }, cb)
     },
+    // eslint-disable-next-line camelcase
+    sendTransactionMetricSet (transaction_metricsets, cb) {
+      this._write({ transaction_metricsets }, cb)
+    },
     flush (cb) {
       if (cb) process.nextTick(cb)
     }

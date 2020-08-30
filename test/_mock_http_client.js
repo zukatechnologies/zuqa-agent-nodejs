@@ -13,7 +13,7 @@ module.exports = function (expected, done) {
   let timer
 
   const client = {
-    _writes: { length: 0, spans: [], transactions: [], errors: [], metricsets: [] },
+    _writes: { length: 0, spans: [], transactions: [], errors: [], metricsets: [], transaction_metricsets: [] },
     _write (obj, cb) {
       cb = cb || noop
 
@@ -38,6 +38,10 @@ module.exports = function (expected, done) {
     },
     sendMetricSet (metricset, cb) {
       this._write({ metricset }, cb)
+    },
+    // eslint-disable-next-line camelcase
+    sendTransactionMetricSet (transaction_metricsets, cb) {
+      this._write({ transaction_metricsets }, cb)
     },
     flush (cb) {
       if (cb) process.nextTick(cb)
