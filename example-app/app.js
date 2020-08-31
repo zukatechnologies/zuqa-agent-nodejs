@@ -13,10 +13,10 @@ const apm = require('../').start({
 
 const app = require('express')()
 
-app.get('/hello', function (req, res) {
+app.get('/hello23', function (req, res) {
   setTimeout(function () {
     res.send('Hello World!')
-  }, 800)
+  }, 400)
 })
 
 app.listen(3000)
