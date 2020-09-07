@@ -13,7 +13,7 @@ const streamToBuffer = require('fast-stream-to-buffer')
 const StreamChopper = require('stream-chopper')
 const ndjson = require('./lib/ndjson')
 const truncate = require('./lib/truncate')
-const pkg = require('./package')
+const pkg = require('../package')
 
 module.exports = Client
 

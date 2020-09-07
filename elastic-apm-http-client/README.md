@@ -31,7 +31,7 @@ const Client = require('elastic-apm-http-client')
 const client = new Client({
   serviceName: 'My App',
   agentName: 'my-nodejs-agent',
-  agentVersion: require('./package.json').version,
+  agentVersion: require('../package.json').version,
   userAgent: 'My Custom Elastic APM Agent'
 })
 

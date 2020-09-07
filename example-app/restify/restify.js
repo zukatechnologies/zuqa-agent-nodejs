@@ -1,5 +1,5 @@
 
-const apm = require('../').start({
+const apm = require('../../index').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: 'HELLO EXPRESS',
@@ -11,7 +11,7 @@ const apm = require('../').start({
   serverUrl: 'http://localhost:8200'
 })
 
-const restify = require('restify')
+const restify = require('example-app/restify/restify')
 
 const app = restify.createServer()
 

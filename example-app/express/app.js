@@ -1,5 +1,5 @@
 
-const apm = require('../').start({
+const apm = require('../../index').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: 'HELLO EXPRESS',
@@ -12,11 +12,12 @@ const apm = require('../').start({
 })
 
 const app = require('express')()
+var cors = require('cors')
 
-app.get('/hello23', function (req, res) {
+app.get('/hello', cors(), function (req, res) {
   setTimeout(function () {
     res.send('Hello World!')
-  }, 400)
+  }, 800)
 })
 
 app.listen(3000)
