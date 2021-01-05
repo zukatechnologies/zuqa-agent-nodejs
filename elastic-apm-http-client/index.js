@@ -122,7 +122,7 @@ Client.prototype.config = function (opts) {
   if (!this._conf.size && this._conf.size !== 0) this._conf.size = 750 * 1024
   if (!this._conf.time && this._conf.time !== 0) this._conf.time = 10000
   if (!this._conf.serverTimeout && this._conf.serverTimeout !== 0) this._conf.serverTimeout = 15000
-  if (!this._conf.serverUrl) this._conf.serverUrl = 'http://localhost:8200'
+  if (!this._conf.serverUrl) this._conf.serverUrl = 'http://localhost:32140'
   if (!this._conf.hostname) this._conf.hostname = hostname
   if (!this._conf.environment) this._conf.environment = process.env.NODE_ENV || 'development'
   if (!this._conf.truncateKeywordsAt) this._conf.truncateKeywordsAt = 1024

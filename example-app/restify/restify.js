@@ -7,8 +7,8 @@ const apm = require('../../index').start({
   // Use if APM Server requires a token
   secretToken: '',
 
-  // Set custom APM Server URL (default: http://localhost:8200)
-  serverUrl: 'http://localhost:8200'
+  // Set custom APM Server URL (default: http://localhost:32140)
+  serverUrl: 'http://localhost:32140'
 })
 
 const restify = require('example-app/restify/restify')

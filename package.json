@@ -1,7 +1,7 @@
 {
-  "name": "elastic-apm-node",
-  "version": "3.5.0",
-  "description": "The official Elastic APM agent for Node.js",
+  "name": "zuqa-agent-nodejs",
+  "version": "v1.0.0-alpha.1",
+  "description": "The official zuQA APM agent for Node.js",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -36,16 +36,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/elastic/apm-agent-nodejs.git"
+    "url": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git"
   },
   "engines": {
     "node": "^8.6.0 || 10 || 12 || 13 || 14"
   },
   "keywords": [
     "opbeat",
-    "elastic",
-    "elasticapm",
-    "elasticsearch",
+    "zuqa",
+    "zuqaapm",
     "log",
     "logging",
     "bug",
@@ -72,9 +71,9 @@
   "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/elastic/apm-agent-nodejs/issues"
+    "url": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git"
   },
-  "homepage": "https://github.com/elastic/apm-agent-nodejs",
+  "homepage": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git",
   "dependencies": {
     "after-all-results": "^2.0.0",
     "async-value-promise": "^1.1.1",

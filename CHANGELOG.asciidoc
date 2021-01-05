@@ -740,7 +740,7 @@ endif::[]
 
 [[release-notes-0.2.0]]
 ==== 0.2.0 - 2017/8/28
-  * refactor(\*): support new default port 8200 in APM Server
+  * refactor(\*): support new default port 32140 in APM Server
   * refactor(\*): support new context.response status code format
 
 [[release-notes-0.1.1]]

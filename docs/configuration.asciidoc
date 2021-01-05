@@ -53,7 +53,7 @@ The secret token optionally expected by the APM Server.
 ==== `serverUrl`
 
 * *Type:* String
-* *Default:* `http://localhost:8200`
+* *Default:* `http://localhost:32140`
 * *Env:* `ELASTIC_APM_SERVER_URL`
 
 The URL to where the APM Server is deployed.
@@ -833,7 +833,7 @@ module.exports = {
   // Use if APM Server requires a token
   secretToken: '',
 
-  // Set custom APM Server URL (default: http://localhost:8200)
+  // Set custom APM Server URL (default: http://localhost:32140)
   serverUrl: ''
 }
 ----

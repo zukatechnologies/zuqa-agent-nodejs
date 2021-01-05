@@ -82,7 +82,7 @@ HTTP client configuration:
 - `userAgent` - (required) The HTTP user agent that your module should
   identify it self as
 - `secretToken` - The Elastic APM intake API secret token
-- `serverUrl` - The APM Server URL (default: `http://localhost:8200`)
+- `serverUrl` - The APM Server URL (default: `http://localhost:32140`)
 - `headers` - An object containing extra HTTP headers that should be
   used when making HTTP requests to he APM Server
 - `rejectUnauthorized` - Set to `false` if the client shouldn't verify
