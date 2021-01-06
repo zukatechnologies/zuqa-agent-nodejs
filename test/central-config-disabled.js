@@ -1,7 +1,7 @@
 'use strict'
 
-const existingValue = process.env.ELASTIC_APM_CENTRAL_CONFIG
-delete process.env.ELASTIC_APM_CENTRAL_CONFIG
+const existingValue = process.env.ZUQA_APM_CENTRAL_CONFIG
+delete process.env.ZUQA_APM_CENTRAL_CONFIG
 
 const http = require('http')
 
@@ -30,6 +30,6 @@ test('central config disabled', function (t) {
   })
 
   t.on('end', function () {
-    if (existingValue) process.env.ELASTIC_APM_CENTRAL_CONFIG = existingValue
+    if (existingValue) process.env.ZUQA_APM_CENTRAL_CONFIG = existingValue
   })
 })

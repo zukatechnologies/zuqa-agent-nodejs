@@ -12,7 +12,7 @@ html_dir=$build_dir/html_docs
 # Checks if docs clone already exists
 if [ ! -d $docs_dir ]; then
     # Only head is cloned
-    git clone --depth=1 https://github.com/elastic/docs.git $docs_dir
+    git clone --depth=1 https://github.com/zukatechnologies/docs.git $docs_dir
 else
     echo "$docs_dir already exists. Not cloning."
 fi

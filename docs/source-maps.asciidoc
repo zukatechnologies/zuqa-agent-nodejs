@@ -7,7 +7,7 @@ endif::[]
 
 == Source map support
 
-The Elastic APM Node.js agent supports source maps by default.
+The Zuqa APM Node.js agent supports source maps by default.
 If you transpile your source code and supply a source map,
 the agent will be able to collect the correct stack traces and even the original source code if available.
 
@@ -32,7 +32,7 @@ All modern build toolchains support generating source maps and adding these comm
 [[original-source-code]]
 === Original source code
 
-Elastic APM uses source maps for two purposes:
+Zuqa APM uses source maps for two purposes:
 to collect stack traces that point to your original source code,
 _and_ to collect the original source code as inline code snippets related to each frame in your stack traces.
 

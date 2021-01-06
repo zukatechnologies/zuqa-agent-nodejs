@@ -1,6 +1,6 @@
 'use strict'
 
-process.env.ELASTIC_APM_TEST = true
+process.env.ZUQA_APM_TEST = true
 var host = (process.env.ES_HOST || 'localhost') + ':9200'
 
 var agent = require('../../..').start({

@@ -20,4 +20,4 @@
     prune-dead-branches: true
     publishers:
     - email:
-        recipients: infra-root+build@elastic.co
+        recipients: infra-root+build@zuqa.io

@@ -7,7 +7,7 @@ endif::[]
 
 == Introduction
 
-The Elastic APM Node.js Agent sends performance metrics and errors to the APM Server.
+The Zuqa APM Node.js Agent sends performance metrics and errors to the APM Server.
 It has built-in support for the most popular frameworks and routers,
 as well as a simple API which allows you to instrument any application.
 

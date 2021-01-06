@@ -21,9 +21,9 @@ var Instrumentation = require('../lib/instrumentation')
 var apmVersion = require('../package').version
 var apmName = require('../package').name
 
-process.env.ELASTIC_APM_METRICS_INTERVAL = '0'
-process.env.ELASTIC_APM_CENTRAL_CONFIG = 'false'
-process.env._ELASTIC_APM_ASYNC_HOOKS_RESETTABLE = 'true'
+process.env.ZUQA_APM_METRICS_INTERVAL = '0'
+process.env.ZUQA_APM_CENTRAL_CONFIG = 'false'
+process.env._ZUQA_APM_ASYNC_HOOKS_RESETTABLE = 'true'
 
 var optionFixtures = [
   ['abortedErrorThreshold', 'ABORTED_ERROR_THRESHOLD', 25],
@@ -83,7 +83,7 @@ optionFixtures.forEach(function (fixture) {
     var file = fixture[0] === 'serverCaCertFile' // special case for files, so a temp file can be written
     var number = typeof fixture[2] === 'number'
     var array = Array.isArray(fixture[2])
-    var envName = 'ELASTIC_APM_' + fixture[1]
+    var envName = 'ZUQA_APM_' + fixture[1]
     var existingValue = process.env[envName]
 
     test(`should be configurable by environment variable ${envName}`, function (t) {
@@ -94,7 +94,7 @@ optionFixtures.forEach(function (fixture) {
       else if (number) value = 1
       else if (url) value = 'http://custom-value'
       else if (file) {
-        var tmpdir = path.join(os.tmpdir(), 'elastic-apm-node-test', String(Date.now()))
+        var tmpdir = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
         var tmpfile = path.join(tmpdir, 'custom-file')
         t.on('end', function () { rimraf.sync(tmpdir) })
         mkdirp.sync(tmpdir)
@@ -136,7 +136,7 @@ optionFixtures.forEach(function (fixture) {
         value1 = 'http://overwriting-value'
         value2 = 'http://custom-value'
       } else if (file) {
-        var tmpdir = path.join(os.tmpdir(), 'elastic-apm-node-test', String(Date.now()))
+        var tmpdir = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
         var tmpfile = path.join(tmpdir, 'custom-file')
         t.on('end', function () { rimraf.sync(tmpdir) })
         mkdirp.sync(tmpdir)
@@ -191,23 +191,23 @@ optionFixtures.forEach(function (fixture) {
 })
 
 falsyValues.forEach(function (val) {
-  test('should be disabled by environment variable ELASTIC_APM_ACTIVE set to: ' + util.inspect(val), function (t) {
+  test('should be disabled by environment variable ZUQA_APM_ACTIVE set to: ' + util.inspect(val), function (t) {
     var agent = Agent()
-    process.env.ELASTIC_APM_ACTIVE = val
+    process.env.ZUQA_APM_ACTIVE = val
     agent.start({ serviceName: 'foo', secretToken: 'baz' })
     t.equal(agent._conf.active, false)
-    delete process.env.ELASTIC_APM_ACTIVE
+    delete process.env.ZUQA_APM_ACTIVE
     t.end()
   })
 })
 
 truthyValues.forEach(function (val) {
-  test('should be enabled by environment variable ELASTIC_APM_ACTIVE set to: ' + util.inspect(val), function (t) {
+  test('should be enabled by environment variable ZUQA_APM_ACTIVE set to: ' + util.inspect(val), function (t) {
     var agent = Agent()
-    process.env.ELASTIC_APM_ACTIVE = val
+    process.env.ZUQA_APM_ACTIVE = val
     agent.start({ serviceName: 'foo', secretToken: 'baz' })
     t.equal(agent._conf.active, true)
-    delete process.env.ELASTIC_APM_ACTIVE
+    delete process.env.ZUQA_APM_ACTIVE
     t.end()
   })
 })
@@ -231,7 +231,7 @@ test('should log invalid booleans', function (t) {
   t.equal(warning.args[1], 'active')
 
   var debug = logger.calls.shift()
-  t.equal(debug.message, 'Elastic APM agent disabled (`active` is false)')
+  t.equal(debug.message, 'Zuqa APM agent disabled (`active` is false)')
   t.equal(debug.args.length, 0)
 
   t.end()
@@ -278,9 +278,9 @@ var timeValues = [
 timeValues.forEach(function (key) {
   test(key + ' should convert minutes to seconds', function (t) {
     if (key === 'metricsInterval') {
-      delete process.env.ELASTIC_APM_METRICS_INTERVAL
+      delete process.env.ZUQA_APM_METRICS_INTERVAL
       t.on('end', function () {
-        process.env.ELASTIC_APM_METRICS_INTERVAL = '0'
+        process.env.ZUQA_APM_METRICS_INTERVAL = '0'
       })
     }
 
@@ -294,9 +294,9 @@ timeValues.forEach(function (key) {
 
   test(key + ' should convert milliseconds to seconds', function (t) {
     if (key === 'metricsInterval') {
-      delete process.env.ELASTIC_APM_METRICS_INTERVAL
+      delete process.env.ZUQA_APM_METRICS_INTERVAL
       t.on('end', function () {
-        process.env.ELASTIC_APM_METRICS_INTERVAL = '0'
+        process.env.ZUQA_APM_METRICS_INTERVAL = '0'
       })
     }
 
@@ -310,9 +310,9 @@ timeValues.forEach(function (key) {
 
   test(key + ' should parse seconds', function (t) {
     if (key === 'metricsInterval') {
-      delete process.env.ELASTIC_APM_METRICS_INTERVAL
+      delete process.env.ZUQA_APM_METRICS_INTERVAL
       t.on('end', function () {
-        process.env.ELASTIC_APM_METRICS_INTERVAL = '0'
+        process.env.ZUQA_APM_METRICS_INTERVAL = '0'
       })
     }
 
@@ -326,9 +326,9 @@ timeValues.forEach(function (key) {
 
   test(key + ' should support bare numbers', function (t) {
     if (key === 'metricsInterval') {
-      delete process.env.ELASTIC_APM_METRICS_INTERVAL
+      delete process.env.ZUQA_APM_METRICS_INTERVAL
       t.on('end', function () {
-        process.env.ELASTIC_APM_METRICS_INTERVAL = '0'
+        process.env.ZUQA_APM_METRICS_INTERVAL = '0'
       })
     }
 
@@ -407,20 +407,20 @@ noPrefixValues.forEach(function (pair) {
   })
 })
 
-test('should overwrite option property active by ELASTIC_APM_ACTIVE', function (t) {
+test('should overwrite option property active by ZUQA_APM_ACTIVE', function (t) {
   var agent = Agent()
   var opts = { serviceName: 'foo', secretToken: 'baz', active: true }
-  process.env.ELASTIC_APM_ACTIVE = 'false'
+  process.env.ZUQA_APM_ACTIVE = 'false'
   agent.start(opts)
   t.equal(agent._conf.active, false)
-  delete process.env.ELASTIC_APM_ACTIVE
+  delete process.env.ZUQA_APM_ACTIVE
   t.end()
 })
 
 test('should default serviceName to package name', function (t) {
   var agent = Agent()
   agent.start()
-  t.equal(agent._conf.serviceName, 'elastic-apm-node')
+  t.equal(agent._conf.serviceName, 'zuqa-apm-node')
   t.end()
 })
 
@@ -477,7 +477,7 @@ test('serviceName defaults to package name', function (t) {
   var exec = util.promisify(cp.exec)
 
   function testServiceConfig (pkg, handle) {
-    var tmp = path.join(os.tmpdir(), 'elastic-apm-node-test', String(Date.now()))
+    var tmp = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
     var files = [
       {
         action: 'mkdirp',
@@ -492,7 +492,7 @@ test('serviceName defaults to package name', function (t) {
         action: 'create',
         path: path.join(tmp, 'index.js'),
         contents: `
-          var apm = require('elastic-apm-node').start()
+          var apm = require('zuqa-apm-node').start()
           console.log(JSON.stringify(apm._conf))
         `
       },
@@ -512,7 +512,7 @@ test('serviceName defaults to package name', function (t) {
       files.push({
         action: 'symlink',
         from: path.resolve(__dirname, '..'),
-        to: path.join(tmp, 'node_modules/elastic-apm-node')
+        to: path.join(tmp, 'node_modules/zuqa-apm-node')
       })
     }
 
@@ -534,7 +534,7 @@ test('serviceName defaults to package name', function (t) {
             return exec('npm link', {
               cwd: file.from
             }).then(() => {
-              return exec('npm link elastic-apm-node', {
+              return exec('npm link zuqa-apm-node', {
                 cwd: file.to
               })
             })
@@ -783,7 +783,7 @@ test('custom transport', function (t) {
             // first flush is from calling `agent.flush()` below, second flush
             // is done by the internals of `captureError()`. This logic will
             // change once the following issue is implemented:
-            // https://github.com/elastic/apm-agent-nodejs/issues/686
+            // https://github.com/zukatechnologies/apm-agent-nodejs/issues/686
             first = false
             return
           }

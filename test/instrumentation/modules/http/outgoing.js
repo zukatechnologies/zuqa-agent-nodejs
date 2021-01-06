@@ -30,7 +30,7 @@ test('http.request(options, callback)', echoTest('http', (port, cb) => {
   return http.request(options, cb)
 }))
 
-test('http: consider useElasticTraceparentHeader config option', echoTest('http', { useElasticTraceparentHeader: false }, (port, cb) => {
+test('http: consider useZuqaTraceparentHeader config option', echoTest('http', { useZuqaTraceparentHeader: false }, (port, cb) => {
   var options = { port }
   return http.request(options, cb)
 }))
@@ -80,7 +80,7 @@ test('https.request(options, callback)', echoTest('https', (port, cb) => {
   return https.request(options, cb)
 }))
 
-test('https: consider useElasticTraceparentHeader config option', echoTest('https', { useElasticTraceparentHeader: false }, (port, cb) => {
+test('https: consider useZuqaTraceparentHeader config option', echoTest('https', { useZuqaTraceparentHeader: false }, (port, cb) => {
   var options = { port, rejectUnauthorized: false }
   return https.request(options, cb)
 }))
@@ -161,10 +161,10 @@ function echoTest (type, opts, handler) {
 
       var traceparent = req.getHeader('traceparent')
       t.ok(traceparent, 'should have traceparent header')
-      if (opts && opts.useElasticTraceparentHeader === false) {
-        t.equal(req.getHeader('elastic-apm-traceparent'), undefined)
+      if (opts && opts.useZuqaTraceparentHeader === false) {
+        t.equal(req.getHeader('zuqa-apm-traceparent'), undefined)
       } else {
-        t.ok(req.getHeader('elastic-apm-traceparent'), 'should have elastic-apm-traceparent header')
+        t.ok(req.getHeader('zuqa-apm-traceparent'), 'should have zuqa-apm-traceparent header')
       }
 
       var expected = TraceParent.fromString(trans._context.toString())

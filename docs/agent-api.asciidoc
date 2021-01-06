@@ -7,7 +7,7 @@ endif::[]
 
 === `Agent` API
 
-NOTE: This is the API documentation for the Elastic APM Node.js Agent.
+NOTE: This is the API documentation for the Zuqa APM Node.js Agent.
 For getting started,
 we recommend that you take a look at our framework specific documentation for either <<express,Express>>,
 <<hapi,hapi>>,
@@ -16,8 +16,8 @@ we recommend that you take a look at our framework specific documentation for ei
 <<fastify,Fastify>>,
 or <<custom-stack,custom frameworks>>.
 
-The Elastic APM agent for Node.js is a singleton.
-You get the agent instance by either requiring `elastic-apm-node` or `elastic-apm-node/start`.
+The Zuqa APM agent for Node.js is a singleton.
+You get the agent instance by either requiring `zuqa-apm-node` or `zuqa-apm-node/start`.
 For details on the two approaches,
 see the <<advanced-setup,Setup and Configuration>> guide.
 
@@ -26,17 +26,17 @@ which allows you to require and start the agent on the same line:
 
 [source,js]
 ----
-const apm = require('elastic-apm-node').start(...)
+const apm = require('zuqa-apm-node').start(...)
 ----
 
 If you need to access the `Agent` in any part of your codebase,
-you can simply require `elastic-apm-node` to access the already started singleton.
+you can simply require `zuqa-apm-node` to access the already started singleton.
 You therefore don't need to manage or pass around the started `Agent` yourself.
 
 [[apm-start]]
 ==== `apm.start([options])`
 
-Starts the Elastic APM agent for Node.js and returns itself.
+Starts the Zuqa APM agent for Node.js and returns itself.
 
 [IMPORTANT]
 ====
@@ -46,7 +46,7 @@ If you are using Babel calling this function will not have the desired effect.
 See the <<es-modules,Babel / ES Modules support documentation>> for details.
 
 If you are using Typescript the import statement may be removed if it is not used.
-It is recommended to use `-r elastic-apm-node/start` when starting the app to avoid this.
+It is recommended to use `-r zuqa-apm-node/start` when starting the app to avoid this.
 ====
 
 See the <<configuration,Configuration documentation>> for available options.
@@ -339,7 +339,7 @@ This makes it possible to better group error messages that contain variable data
 
 To ease debugging it's possible to send some extra data with each error you send to the APM Server.
 The APM Server intake API supports a lot of different metadata fields,
-most of which are automatically managed by the Elastic APM Node.js Agent.
+most of which are automatically managed by the Zuqa APM Node.js Agent.
 But if you wish you can supply some extra details using `user` or `custom`.
 For more details on the properties accepted by the events intake API see the {apm-server-ref-v}/events-api.html[events intake API docs].
 
@@ -420,7 +420,7 @@ Returns a middleware function used to collect and send errors to the APM Server.
 
 [source,js]
 ----
-const apm = require('elastic-apm-node').start()
+const apm = require('zuqa-apm-node').start()
 const connect = require('connect')
 
 const app = connect()
@@ -434,7 +434,7 @@ app.use(function (req, res, next) {
   throw new Error('Broke!')
 })
 
-// add Elastic APM in the bottom of the middleware stack
+// add Zuqa APM in the bottom of the middleware stack
 app.use(apm.middleware.connect())
 
 app.listen(3000)

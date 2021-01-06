@@ -513,7 +513,7 @@ function assertSpan (t, span, sql) {
 function createClient (cb) {
   setup(function () {
     queryable = new pg.Client({
-      database: 'test_elastic_apm',
+      database: 'test_zuqa_apm',
       user: process.env.PGUSER || 'postgres'
     })
     queryable.connect(function (err) {
@@ -531,13 +531,13 @@ function createPool (cb) {
       queryable = pg
       connector = function connector (cb) {
         return pg.connect({
-          database: 'test_elastic_apm',
+          database: 'test_zuqa_apm',
           user: process.env.PGUSER || 'postgres'
         }, cb)
       }
     } else {
       var pool = new pg.Pool({
-        database: 'test_elastic_apm',
+        database: 'test_zuqa_apm',
         user: process.env.PGUSER || 'postgres'
       })
       queryable = pool

@@ -7,7 +7,7 @@ endif::[]
 
 == Supported technologies
 
-Support for the Elastic APM Node.js agent follows the support schedule of Node.js itself to the end-of-life period of each version after its maintenance term.
+Support for the Zuqa APM Node.js agent follows the support schedule of Node.js itself to the end-of-life period of each version after its maintenance term.
 Versions of Node.js past their end-of-life date are not supported.
 
 image::./images/node_release_schedule.svg[Node.js release schedule]
@@ -20,7 +20,7 @@ that not all core Node.js API's can be instrumented without the use of Async Hoo
 
 [float]
 [[elastic-stack-compatibility]]
-=== Elastic Stack Compatibility
+=== Zuqa Stack Compatibility
 
 This agent is compatible with {apm-server-ref-v}[APM Server] v6.5 and above.
 For support for previous releases of the APM Server,
@@ -30,7 +30,7 @@ use version {apm-node-ref-1x}[1.x] of the agent.
 [[compatibility-frameworks]]
 === Frameworks
 
-Though you can use Elastic APM <<custom-stack,with any Node.js framework>>,
+Though you can use Zuqa APM <<custom-stack,with any Node.js framework>>,
 we automate a few things for the most popular Node.js modules.
 
 These are the frameworks that we officially support:
@@ -99,7 +99,7 @@ so those should be supported as well
 [[compatibility-better-stack-traces]]
 ==== Better Stack Traces
 
-When viewing a span in Elastic APM,
+When viewing a span in Zuqa APM,
 you'll see where in your code you initiated the span (e.g. a database query).
 
 Given the async nature of Node.js,
@@ -114,7 +114,7 @@ If you use an unsupported version you might not be able to see your own code in 
 This does not impact the stability of your application in any way - only the collected metrics.
 
 If you don't see your own code in spans,
-please create a new topic in the https://discuss.elastic.co/c/apm[Elastic APM discuss forum] and include information about your dependencies.
+please create a new topic in the https://discuss.elastic.co/c/apm[Zuqa APM discuss forum] and include information about your dependencies.
 
 [options="header"]
 |=================================================
@@ -126,7 +126,7 @@ please create a new topic in the https://discuss.elastic.co/c/apm[Elastic APM di
 [[compatibility-continuity]]
 ==== Continuity
 
-The Elastic APM agent monitors async operations in your Node.js application to maintain awareness of which request is the active request at any given time.
+The Zuqa APM agent monitors async operations in your Node.js application to maintain awareness of which request is the active request at any given time.
 Certain modules can interfere with this monitoring if not handled properly.
 
 Below is a list of modules known to cause issues with this monitoring.
@@ -135,7 +135,7 @@ If you use an unsupported version you might experience missing spans.
 This does not impact the stability of your application in any way - only the collected metrics.
 
 If you do experience missing spans in your performance metrics,
-please create a new topic in the https://discuss.elastic.co/c/apm[Elastic APM discuss forum] and include information about your dependencies and what data is missing.
+please create a new topic in the https://discuss.elastic.co/c/apm[Zuqa APM discuss forum] and include information about your dependencies and what data is missing.
 
 [options="header"]
 |=======================================================================

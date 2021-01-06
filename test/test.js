@@ -103,7 +103,7 @@ mapSeries(directories, readdir, function (err, directoryFiles) {
       file: 'test.js',
       cwd: 'test/start/env',
       env: {
-        ELASTIC_APM_SERVICE_NAME: 'from-env'
+        ZUQA_APM_SERVICE_NAME: 'from-env'
       }
     },
     {

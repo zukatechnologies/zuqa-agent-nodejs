@@ -16,7 +16,7 @@ var test = require('tape')
 
 var fileSize = fs.readFileSync(__filename, 'utf8').length
 
-test('https://github.com/elastic/apm-agent-nodejs/issues/423', function (t) {
+test('https://github.com/zukatechnologies/apm-agent-nodejs/issues/423', function (t) {
   // Start dummy remote server to fetch gzip'ed data from
   var remote = http.createServer(function (req, res) {
     res.setHeader('Content-Encoding', 'gzip')
