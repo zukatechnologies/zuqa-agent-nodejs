@@ -60,19 +60,19 @@ jobs:
     # Disable Async Hooks
     -
       node_js: '14'
-      env: ELASTIC_APM_ASYNC_HOOKS=false
+      env: ZUQA_APM_ASYNC_HOOKS=false
     -
       node_js: '13'
-      env: ELASTIC_APM_ASYNC_HOOKS=false
+      env: ZUQA_APM_ASYNC_HOOKS=false
     -
       node_js: '12'
-      env: ELASTIC_APM_ASYNC_HOOKS=false
+      env: ZUQA_APM_ASYNC_HOOKS=false
     -
       node_js: '10'
-      env: ELASTIC_APM_ASYNC_HOOKS=false
+      env: ZUQA_APM_ASYNC_HOOKS=false
     -
       node_js: '8'
-      env: ELASTIC_APM_ASYNC_HOOKS=false
+      env: ZUQA_APM_ASYNC_HOOKS=false
 
     # Commit Messages
     -

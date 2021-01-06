@@ -30,7 +30,7 @@ Here's an example of setting the sample rate to 20%:
 
 [source,js]
 ----
-require('elastic-apm-node').start({
+require('zuqa-agent-node').start({
   transactionSampleRate: 0.2
 })
 ----

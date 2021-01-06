@@ -8,7 +8,7 @@ endif::[]
 === Custom spans
 
 This is an example of how to use custom spans.
-For general information about the Elastic APM Node.js Span API,
+For general information about the Zuqa APM Node.js Span API,
 see the <<span-api,Span API documentation>>.
 
 If you want to track and time a custom event that happens in your application during a transaction,
@@ -21,7 +21,7 @@ In the example below, we create an Express app that times how long it takes to:
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
+var apm = require('zuqa-agent-node').start()
 var app = require('express')()
 
 // body reader middleware

@@ -18,7 +18,7 @@ The term "trace" was previously used to describe a small piece of work instrumen
 To align with modern APM vendors,
 we now refer to this as a "span"
 
-The term "app" was previously used to describe your Node.js application in relation to Elastic APM.
+The term "app" was previously used to describe your Node.js application in relation to Zuqa APM.
 To be more specific,
 we now refer to this as a "service".
 

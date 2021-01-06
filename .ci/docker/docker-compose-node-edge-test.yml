@@ -8,7 +8,7 @@ services:
       args:
         - NODE_VERSION=${NODE_VERSION}
         - NVM_NODEJS_ORG_MIRROR=${NVM_NODEJS_ORG_MIRROR}
-        - ELASTIC_APM_ASYNC_HOOKS=${ELASTIC_APM_ASYNC_HOOKS}
+        - ZUQA_APM_ASYNC_HOOKS=${ZUQA_APM_ASYNC_HOOKS}
     working_dir: /app
     command: >
       /bin/bash -c ".ci/scripts/docker-test.sh"
@@ -24,7 +24,7 @@ services:
       MEMCACHED_HOST: 'memcached'
       NODE_VERSION: ${NODE_VERSION}
       NVM_NODEJS_ORG_MIRROR: ${NVM_NODEJS_ORG_MIRROR}
-      ELASTIC_APM_ASYNC_HOOKS: ${ELASTIC_APM_ASYNC_HOOKS}
+      ZUQA_APM_ASYNC_HOOKS: ${ZUQA_APM_ASYNC_HOOKS}
       TAV: ${TAV_VERSIONS}
       HOME: /tmp
     volumes:

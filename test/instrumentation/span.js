@@ -1,6 +1,6 @@
 'use strict'
 
-process.env.ELASTIC_APM_TEST = true
+process.env.ZUQA_APM_TEST = true
 
 var test = require('tape')
 

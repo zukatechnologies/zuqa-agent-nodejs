@@ -359,7 +359,7 @@ module.exports = (moduleName) => {
       t.equal(err, customError)
       t.ok(opts.custom)
       t.ok(opts.request)
-      t.deepEqual(opts.custom.tags, ['elastic-apm', 'error'])
+      t.deepEqual(opts.custom.tags, ['zuqa-apm', 'error'])
       t.false(opts.custom.internals)
       t.ok(opts.custom.data instanceof Error)
     }
@@ -370,7 +370,7 @@ module.exports = (moduleName) => {
       method: 'GET',
       path: '/error',
       handler: handler(function (request) {
-        request.log(['elastic-apm', 'error'], customError)
+        request.log(['zuqa-apm', 'error'], customError)
 
         return 'hello world'
       })
@@ -379,7 +379,7 @@ module.exports = (moduleName) => {
     var emitter = server.events || server
     emitter.on('request', function (req, event, tags) {
       if (event.channel === 'internal') return
-      t.deepEqual(event.tags, ['elastic-apm', 'error'])
+      t.deepEqual(event.tags, ['zuqa-apm', 'error'])
     })
 
     runServer(server, function (err) {
@@ -387,7 +387,7 @@ module.exports = (moduleName) => {
 
       emitter.on('request', function (req, event, tags) {
         if (event.channel === 'internal') return
-        t.deepEqual(event.tags, ['elastic-apm', 'error'])
+        t.deepEqual(event.tags, ['zuqa-apm', 'error'])
       })
 
       http.get('http://localhost:' + server.info.port + '/error', function (res) {

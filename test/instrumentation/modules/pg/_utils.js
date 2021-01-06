@@ -13,9 +13,9 @@ function reset (cb) {
 
   client.connect(function (err) {
     if (err) throw err
-    client.query('DROP DATABASE IF EXISTS test_elastic_apm', function (err) {
+    client.query('DROP DATABASE IF EXISTS test_zuqa_apm', function (err) {
       if (err) throw err
-      client.query('CREATE DATABASE test_elastic_apm', function (err) {
+      client.query('CREATE DATABASE test_zuqa_apm', function (err) {
         if (err) throw err
         client.once('end', cb)
         client.end()
@@ -26,7 +26,7 @@ function reset (cb) {
 
 function loadData (cb) {
   var client = new Client({
-    database: 'test_elastic_apm',
+    database: 'test_zuqa_apm',
     user: process.env.PGUSER || 'postgres'
   })
 

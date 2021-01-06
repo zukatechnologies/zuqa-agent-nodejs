@@ -1,6 +1,6 @@
 'use strict'
 
-process.env.ELASTIC_APM_TEST = true
+process.env.ZUQA_APM_TEST = true
 
 var agent = require('../../../..').start({
   serviceName: 'test',
@@ -135,7 +135,7 @@ function createClient (t, cb) {
     knex = Knex({
       client: 'pg',
       connection: {
-        database: 'test_elastic_apm',
+        database: 'test_zuqa_apm',
         user: process.env.PGUSER || 'postgres'
       }
     })

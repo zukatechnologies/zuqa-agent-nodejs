@@ -20,11 +20,11 @@ include::set-up.asciidoc[tag=web-frameworks-list]
 [[custom-stack-installation]]
 ==== Installation
 
-Add the `elastic-apm-node` module as a dependency to your application:
+Add the `zuqa-agent-node` module as a dependency to your application:
 
 [source,bash]
 ----
-npm install elastic-apm-node --save
+npm install zuqa-agent-node --save
 ----
 
 [float]
@@ -35,12 +35,12 @@ It's important that the agent is started before you require *any* other modules 
 
 This means that you should probably require and start the agent in your application's main file (usually `index.js`, `server.js` or `app.js`).
 
-Here's a simple example of how Elastic APM is normally required and started:
+Here's a simple example of how Zuqa APM is normally required and started:
 
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-var apm = require('elastic-apm-node').start({
+var apm = require('zuqa-agent-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',
@@ -48,7 +48,7 @@ var apm = require('elastic-apm-node').start({
   // Use if APM Server requires a token
   secretToken: '',
 
-  // Set custom APM Server URL (default: http://localhost:8200)
+  // Set custom APM Server URL (default: http://localhost:32140)
   serverUrl: '',
 })
 ----
@@ -95,7 +95,7 @@ Excerpt of an application using the https://github.com/watson/patterns[patterns]
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
+var apm = require('zuqa-agent-node').start()
 var http = require('http')
 var patterns = require('patterns')()
 
@@ -108,7 +108,7 @@ http.createServer(function (req, res) {
   // Check if we have a route matching the incoming request
   var match = patterns.match(req.method + ' ' + req.url);
 
-  // If no match is found, respond with a 404. Elastic APM will in
+  // If no match is found, respond with a 404. Zuqa APM will in
   // this case use the default transaction name "unknown route"
   if (!match) {
     res.writeHead(404)
@@ -152,7 +152,7 @@ the agent error handler should be the first in the chain to ensure that it will 
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
+var apm = require('zuqa-agent-node').start()
 var connect = require('connect')
 
 var app = connect()
@@ -162,7 +162,7 @@ app.use(...)
 app.use(...)
 app.use(...)
 
-// Add the Elastic APM middleware after your regular middleware
+// Add the Zuqa APM middleware after your regular middleware
 app.use(apm.middleware.connect())
 
 // ...but before any other error handler

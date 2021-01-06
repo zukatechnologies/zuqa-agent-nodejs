@@ -1,7 +1,7 @@
 {
-  "name": "elastic-apm-node",
-  "version": "3.5.0",
-  "description": "The official Elastic APM agent for Node.js",
+  "name": "zuqa-agent-node",
+  "version": "v1.0.0-alpha.1",
+  "description": "The official zuQA APM agent for Node.js",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -36,16 +36,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/elastic/apm-agent-nodejs.git"
+    "url": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git"
   },
   "engines": {
     "node": "^8.6.0 || 10 || 12 || 13 || 14"
   },
   "keywords": [
     "opbeat",
-    "elastic",
-    "elasticapm",
-    "elasticsearch",
+    "zuqa",
+    "zuqaagent",
     "log",
     "logging",
     "bug",
@@ -72,9 +71,9 @@
   "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/elastic/apm-agent-nodejs/issues"
+    "url": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git"
   },
-  "homepage": "https://github.com/elastic/apm-agent-nodejs",
+  "homepage": "https://github.com/zukatechnologies/zuqa-agent-nodejs.git",
   "dependencies": {
     "after-all-results": "^2.0.0",
     "async-value-promise": "^1.1.1",
@@ -82,7 +81,6 @@
     "console-log-level": "^1.4.1",
     "cookie": "^0.4.0",
     "core-util-is": "^1.0.2",
-    "elastic-apm-http-client": "^9.3.0",
     "end-of-stream": "^1.4.4",
     "error-stack-parser": "^2.0.6",
     "fast-safe-stringify": "^2.0.7",
@@ -105,6 +103,13 @@
     "sql-summary": "^1.0.1",
     "stackman": "^4.0.1",
     "traceparent": "^1.0.0",
+    "cors": "latest",
+    "breadth-filter": "^2.0.0",
+    "container-info": "^1.0.1",
+    "fast-stream-to-buffer": "^1.0.0",
+    "pump": "^3.0.0",
+    "readable-stream": "^3.4.0",
+    "stream-chopper": "^3.0.1",
     "unicode-byte-truncate": "^1.0.0"
   },
   "devDependencies": {
@@ -178,7 +183,9 @@
     "typescript": "^3.7.5",
     "untildify": "^4.0.0",
     "wait-on": "^3.3.0",
-    "ws": "^7.2.1"
+    "ws": "^7.2.1",
+    "codecov": "^3.6.1",
+    "semver": "^6.3.0"
   },
   "greenkeeper": {
     "ignore": [

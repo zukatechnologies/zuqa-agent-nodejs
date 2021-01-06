@@ -15,11 +15,11 @@ include::./shared-set-up.asciidoc[tag=introduction]
 [[hapi-installation]]
 ==== Installation
 
-Add the `elastic-apm-node` module as a dependency to your application:
+Add the `zuqa-agent-node` module as a dependency to your application:
 
 [source,bash]
 ----
-npm install elastic-apm-node --save
+npm install zuqa-agent-node --save
 ----
 
 [float]
@@ -30,12 +30,12 @@ It's important that the agent is started before you require *any* other modules 
 
 This means that you should probably require and start the agent in your application's main file (usually `index.js`, `server.js` or `app.js`).
 
-Here's a simple hapi example with the Elastic APM agent installed:
+Here's a simple hapi example with the Zuqa APM agent installed:
 
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-const apm = require('elastic-apm-node').start({
+const apm = require('zuqa-agent-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',
@@ -43,7 +43,7 @@ const apm = require('elastic-apm-node').start({
   // Use if APM Server requires a token
   secretToken: '',
 
-  // Set custom APM Server URL (default: http://localhost:8200)
+  // Set custom APM Server URL (default: http://localhost:32140)
   serverUrl: '',
 })
 
