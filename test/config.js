@@ -94,7 +94,7 @@ optionFixtures.forEach(function (fixture) {
       else if (number) value = 1
       else if (url) value = 'http://custom-value'
       else if (file) {
-        var tmpdir = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
+        var tmpdir = path.join(os.tmpdir(), 'zuqa-agent-node-test', String(Date.now()))
         var tmpfile = path.join(tmpdir, 'custom-file')
         t.on('end', function () { rimraf.sync(tmpdir) })
         mkdirp.sync(tmpdir)
@@ -136,7 +136,7 @@ optionFixtures.forEach(function (fixture) {
         value1 = 'http://overwriting-value'
         value2 = 'http://custom-value'
       } else if (file) {
-        var tmpdir = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
+        var tmpdir = path.join(os.tmpdir(), 'zuqa-agent-node-test', String(Date.now()))
         var tmpfile = path.join(tmpdir, 'custom-file')
         t.on('end', function () { rimraf.sync(tmpdir) })
         mkdirp.sync(tmpdir)
@@ -420,7 +420,7 @@ test('should overwrite option property active by ZUQA_APM_ACTIVE', function (t) 
 test('should default serviceName to package name', function (t) {
   var agent = Agent()
   agent.start()
-  t.equal(agent._conf.serviceName, 'zuqa-apm-node')
+  t.equal(agent._conf.serviceName, 'zuqa-agent-node')
   t.end()
 })
 
@@ -477,7 +477,7 @@ test('serviceName defaults to package name', function (t) {
   var exec = util.promisify(cp.exec)
 
   function testServiceConfig (pkg, handle) {
-    var tmp = path.join(os.tmpdir(), 'zuqa-apm-node-test', String(Date.now()))
+    var tmp = path.join(os.tmpdir(), 'zuqa-agent-node-test', String(Date.now()))
     var files = [
       {
         action: 'mkdirp',
@@ -492,7 +492,7 @@ test('serviceName defaults to package name', function (t) {
         action: 'create',
         path: path.join(tmp, 'index.js'),
         contents: `
-          var apm = require('zuqa-apm-node').start()
+          var apm = require('zuqa-agent-node').start()
           console.log(JSON.stringify(apm._conf))
         `
       },
@@ -512,7 +512,7 @@ test('serviceName defaults to package name', function (t) {
       files.push({
         action: 'symlink',
         from: path.resolve(__dirname, '..'),
-        to: path.join(tmp, 'node_modules/zuqa-apm-node')
+        to: path.join(tmp, 'node_modules/zuqa-agent-node')
       })
     }
 
@@ -534,7 +534,7 @@ test('serviceName defaults to package name', function (t) {
             return exec('npm link', {
               cwd: file.from
             }).then(() => {
-              return exec('npm link zuqa-apm-node', {
+              return exec('npm link zuqa-agent-node', {
                 cwd: file.to
               })
             })

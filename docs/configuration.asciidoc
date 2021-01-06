@@ -207,7 +207,7 @@ Example usage:
 
 [source,js]
 ----
-require('zuqa-apm-node').start({
+require('zuqa-agent-node').start({
   ignoreUrls: [
     '/ping',
     /^\/admin\//i
@@ -237,7 +237,7 @@ Example usage:
 
 [source,js]
 ----
-require('zuqa-apm-node').start({
+require('zuqa-agent-node').start({
   ignoreUserAgents: [
     'curl/',
     /pingdom/i
@@ -362,7 +362,7 @@ Example of setting <<framework-name,`frameworkName`>> and `frameworkVersion` for
 // read the version from the package.json file
 var frameworkVersion = require('my-custom-framework/package').version
 
-require('zuqa-apm-node').start({
+require('zuqa-agent-node').start({
   frameworkName: 'my-custom-framework',
   frameworkVersion: frameworkVersion
 })
@@ -391,7 +391,7 @@ Set a custom logger, e.g. https://github.com/trentm/node-bunyan[bunyan]:
 
 [source,js]
 ----
-require('zuqa-apm-node').start({
+require('zuqa-agent-node').start({
   logger: require('bunyan')({ level: 'info' })
 })
 ----
@@ -694,7 +694,7 @@ Example using options object:
 
 [source,js]
 ----
-require('zuqa-apm-node').start({
+require('zuqa-agent-node').start({
   disableInstrumentations: ['graphql', 'express-graphql']
 })
 ----
@@ -804,15 +804,15 @@ ZUQA_APM_GLOBAL_LABELS="subspace=sap-hana,rack=number6"
 ==== `configFile`
 
 * *Type:* String
-* *Default:* `zuqa-apm-node.js`
+* *Default:* `zuqa-agent-node.js`
 * *Env:* `ZUQA_APM_CONFIG_FILE`
 
-The Node.js agent will look for a file named `zuqa-apm-node.js` in the current working directory.
+The Node.js agent will look for a file named `zuqa-agent-node.js` in the current working directory.
 You can specify a custom path using this config option (this path must include the filename), e.g:
 
 [source,bash]
 ----
-ZUQA_APM_CONFIG_FILE=/path/to/my-zuqa-apm-node.js
+ZUQA_APM_CONFIG_FILE=/path/to/my-zuqa-agent-node.js
 ----
 
 NOTE: The inline version of this config option,

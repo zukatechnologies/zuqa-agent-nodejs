@@ -47,24 +47,24 @@ This means that you should probably require and start it in your applications ma
 
 There are two ways to start the Zuqa APM agent for Node.js:
 
-* Require the `zuqa-apm-node` module and call the <<apm-start,`start`>> function on the returned agent:
+* Require the `zuqa-agent-node` module and call the <<apm-start,`start`>> function on the returned agent:
 +
 [source,js]
 ----
-var apm = require('zuqa-apm-node').start({
+var apm = require('zuqa-agent-node').start({
   // add configuration options here
 })
 ----
-* Require the `zuqa-apm-node/start` script:
+* Require the `zuqa-agent-node/start` script:
 +
 [source,js]
 ----
-var apm = require('zuqa-apm-node/start')
+var apm = require('zuqa-agent-node/start')
 ----
 +
 If using this approach,
 you can't configure the agent by passing in an options object,
 but instead have to rely on <<configuring-the-agent,one of the other methods of configuration>>.
 
-NOTE: If you are using Babel, you need to use the `zuqa-apm-node/start` approach.
+NOTE: If you are using Babel, you need to use the `zuqa-agent-node/start` approach.
 <<es-modules,Read more>>.

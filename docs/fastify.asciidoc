@@ -19,11 +19,11 @@ check out the <<api,API Reference>>.
 [[fastify-installation]]
 ==== Installation
 
-Add the `zuqa-apm-node` module as a dependency to your application:
+Add the `zuqa-agent-node` module as a dependency to your application:
 
 [source,bash]
 ----
-npm install zuqa-apm-node --save
+npm install zuqa-agent-node --save
 ----
 
 [float]
@@ -39,7 +39,7 @@ Here's a simple Fastify example with the Zuqa APM agent installed:
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-var apm = require('zuqa-apm-node').start({
+var apm = require('zuqa-agent-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',

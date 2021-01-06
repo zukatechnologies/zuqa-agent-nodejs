@@ -1,5 +1,5 @@
 {
-  "name": "zuqa-agent-nodejs",
+  "name": "zuqa-agent-node",
   "version": "v1.0.0-alpha.1",
   "description": "The official zuQA APM agent for Node.js",
   "main": "index.js",
@@ -44,7 +44,7 @@
   "keywords": [
     "opbeat",
     "zuqa",
-    "zuqaapm",
+    "zuqaagent",
     "log",
     "logging",
     "bug",

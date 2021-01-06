@@ -23,7 +23,7 @@ Example of a background job application polling the SQS queuing system for jobs:
 
 [source,js]
 ----
-var apm = require('zuqa-apm-node').start()
+var apm = require('zuqa-agent-node').start()
 var sqs = require('simple-sqs')()
 
 // listen for jobs on the queue

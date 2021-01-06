@@ -31,7 +31,7 @@ And then just start the agent like so:
 [source,js]
 ----
 // Start the agent before any thing else in your app
-var apm = require('zuqa-apm-node').start()
+var apm = require('zuqa-agent-node').start()
 ----
 
 See all possible ways to configure the agent <<configuring-the-agent,in the API documentation>>.

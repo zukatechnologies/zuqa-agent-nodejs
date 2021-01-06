@@ -18,7 +18,7 @@ For more information about OpenTracing, see the https://opentracing.io/[OpenTrac
 [[ot-prerequisites]]
 === Prerequisites
 
-OpenTracing support for the Zuqa APM Node.js Agent is provided via a separate module called https://www.npmjs.com/package/zuqa-apm-node-opentracing[`zuqa-apm-node-opentracing`].
+OpenTracing support for the Zuqa APM Node.js Agent is provided via a separate module called https://www.npmjs.com/package/zuqa-agent-node-opentracing[`zuqa-agent-node-opentracing`].
 
 This module requires that the Zuqa APM Node.js Agent is installed separately.
 To ensure that both dependencies are added to the application,
@@ -26,7 +26,7 @@ install them like so:
 
 [source,bash]
 ----
-npm install zuqa-apm-node zuqa-apm-node-opentracing --save
+npm install zuqa-agent-node zuqa-agent-node-opentracing --save
 ----
 
 [float]
@@ -61,7 +61,7 @@ Here's a simple example where we first start the agent and then initialize the O
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-const agent = require('zuqa-apm-node').start({
+const agent = require('zuqa-agent-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',
@@ -73,7 +73,7 @@ const agent = require('zuqa-apm-node').start({
   serverUrl: '',
 })
 
-const Tracer = require('zuqa-apm-node-opentracing')
+const Tracer = require('zuqa-agent-node-opentracing')
 
 // Pass the Zuqa APM agent as an argument to the OpenTracing tracer
 const tracer = new Tracer(agent)
@@ -92,7 +92,7 @@ span.finish()
 tracer = new Tracer(agent)
 ----
 
-The `zuqa-apm-node-opentracing` module exposes a Tracer class which is OpenTracing compatible.
+The `zuqa-agent-node-opentracing` module exposes a Tracer class which is OpenTracing compatible.
 
 When instantiating the Tracer object,
 an instance of the Zuqa APM Node.js Agent must be provided as its only argument.

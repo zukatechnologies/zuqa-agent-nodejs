@@ -65,7 +65,7 @@ See the API documentation on <<service-name,`serviceName`>> for details.
 Errors get tracked just fine,
 but you don't see any performance metrics.
 
-First, make sure you have https://www.npmjs.com/package/zuqa-apm-node[the latest version] of the Zuqa APM Node.js agent.
+First, make sure you have https://www.npmjs.com/package/zuqa-agent-node[the latest version] of the Zuqa APM Node.js agent.
 Issues are fixed and support for new metrics are added all the time,
 so make sure you keep your dependency up to date.
 

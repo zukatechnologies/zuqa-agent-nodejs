@@ -17,7 +17,7 @@ we recommend that you take a look at our framework specific documentation for ei
 or <<custom-stack,custom frameworks>>.
 
 The Zuqa APM agent for Node.js is a singleton.
-You get the agent instance by either requiring `zuqa-apm-node` or `zuqa-apm-node/start`.
+You get the agent instance by either requiring `zuqa-agent-node` or `zuqa-agent-node/start`.
 For details on the two approaches,
 see the <<advanced-setup,Setup and Configuration>> guide.
 
@@ -26,11 +26,11 @@ which allows you to require and start the agent on the same line:
 
 [source,js]
 ----
-const apm = require('zuqa-apm-node').start(...)
+const apm = require('zuqa-agent-node').start(...)
 ----
 
 If you need to access the `Agent` in any part of your codebase,
-you can simply require `zuqa-apm-node` to access the already started singleton.
+you can simply require `zuqa-agent-node` to access the already started singleton.
 You therefore don't need to manage or pass around the started `Agent` yourself.
 
 [[apm-start]]
@@ -46,7 +46,7 @@ If you are using Babel calling this function will not have the desired effect.
 See the <<es-modules,Babel / ES Modules support documentation>> for details.
 
 If you are using Typescript the import statement may be removed if it is not used.
-It is recommended to use `-r zuqa-apm-node/start` when starting the app to avoid this.
+It is recommended to use `-r zuqa-agent-node/start` when starting the app to avoid this.
 ====
 
 See the <<configuration,Configuration documentation>> for available options.
@@ -420,7 +420,7 @@ Returns a middleware function used to collect and send errors to the APM Server.
 
 [source,js]
 ----
-const apm = require('zuqa-apm-node').start()
+const apm = require('zuqa-agent-node').start()
 const connect = require('connect')
 
 const app = connect()
