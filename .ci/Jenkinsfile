@@ -5,7 +5,7 @@ pipeline {
   agent { label 'linux && immutable' }
   environment {
     REPO = 'apm-agent-nodejs'
-    BASE_DIR = "src/github.com/elastic/${env.REPO}"
+    BASE_DIR = "src/github.com/zukatechnologies/${env.REPO}"
     PIPELINE_LOG_LEVEL='INFO'
     NOTIFY_TO = credentials('notify-to')
     JOB_GCS_BUCKET = credentials('gcs-bucket')
@@ -368,7 +368,7 @@ def generateStep(Map params = [:]){
   def disableAsyncHooks = params.get('disableAsyncHooks', false)
   return {
     node('linux && immutable'){
-      withEnv(["VERSION=${version}", "ELASTIC_APM_ASYNC_HOOKS=${disableAsyncHooks}"]) {
+      withEnv(["VERSION=${version}", "ZUQA_APM_ASYNC_HOOKS=${disableAsyncHooks}"]) {
         try {
           deleteDir()
           unstash 'source'
@@ -469,7 +469,7 @@ def generateStepForWindows(Map params = [:]){
       // When installing with choco the PATH might not be updated within the already connected worker.
       withEnv(["PATH=${PATH};C:\\Program Files\\nodejs",
                "VERSION=${version}",
-               "ELASTIC_APM_ASYNC_HOOKS=${disableAsyncHooks}",
+               "ZUQA_APM_ASYNC_HOOKS=${disableAsyncHooks}",
                "CASSANDRA_HOST=${linuxIp}",
                "ES_HOST=${linuxIp}",
                "MEMCACHED_HOST=${linuxIp}",

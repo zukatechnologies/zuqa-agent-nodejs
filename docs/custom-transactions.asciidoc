@@ -8,10 +8,10 @@ endif::[]
 === Custom transactions
 
 This is an example of how to use custom transactions.
-For general information about the Elastic APM Node.js Transaction API,
+For general information about the Zuqa APM Node.js Transaction API,
 see the <<transaction-api,Transaction API documentation>>.
 
-The Elastic APM agent for Node.js instruments your application by grouping incoming HTTP requests into logical buckets.
+The Zuqa APM agent for Node.js instruments your application by grouping incoming HTTP requests into logical buckets.
 Each HTTP request is recorded in what we call a transaction.
 But if your application is not a regular HTTP server,
 the Node.js agent will not able to know when a transaction should start and when it ends.
@@ -23,7 +23,7 @@ Example of a background job application polling the SQS queuing system for jobs:
 
 [source,js]
 ----
-var apm = require('elastic-apm-node').start()
+var apm = require('zuqa-apm-node').start()
 var sqs = require('simple-sqs')()
 
 // listen for jobs on the queue
@@ -62,7 +62,7 @@ var queue = sqs(queueUrl, function (msg, cb) {
 })
 
 queue.on('error', function (err) {
-  // in case the queue encounters an error, report it to Elastic APM
+  // in case the queue encounters an error, report it to Zuqa APM
   apm.captureError(err)
 })
 ----

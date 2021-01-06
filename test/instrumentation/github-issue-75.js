@@ -16,7 +16,7 @@ var mockClient = require('../_mock_http_client')
 
 // run it 5 times in case of false positives due to race conditions
 times(5, function (n, done) {
-  test('https://github.com/elastic/apm-agent-nodejs/issues/75 ' + n, function (t) {
+  test('https://github.com/zukatechnologies/apm-agent-nodejs/issues/75 ' + n, function (t) {
     resetAgent(4, function (data) {
       t.equal(data.transactions.length, 2, 'should create transactions')
       t.equal(data.spans.length, 2, 'should create spans')

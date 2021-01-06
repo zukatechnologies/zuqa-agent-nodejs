@@ -29,9 +29,9 @@ Steps to reproduce the behavior: <!-- replace example steps below -->
 
 **How are you starting the agent? (please tick one of the boxes)**
 
-- [ ] Calling `agent.start()` directly (e.g. `require('elastic-apm-node').start(...)`)
-- [ ] Requiring `elastic-apm-node/start` from within the source code
-- [ ] Starting node with `-r elastic-apm-node/start`
+- [ ] Calling `agent.start()` directly (e.g. `require('zuqa-apm-node').start(...)`)
+- [ ] Requiring `zuqa-apm-node/start` from within the source code
+- [ ] Starting node with `-r zuqa-apm-node/start`
 
 **Additional context**
 

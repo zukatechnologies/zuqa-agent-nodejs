@@ -56,7 +56,7 @@ with a subtype of `mysql` and an action of `query`.
 
 In the above example, `db` is considered the type.
 Though there are no naming restrictions for the type,
-the following are standardized across all Elastic APM agents:
+the following are standardized across all Zuqa APM agents:
 `app`, `db`, `cache`, `template`, and `ext`.
 
 [[span-subtype]]

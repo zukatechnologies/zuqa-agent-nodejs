@@ -2,7 +2,7 @@
 == Log correlation
 
 In order to correlate logs from your app with transactions captured by the
-Elastic APM Node.js Agent, your logs must contain one or more of the following identifiers:
+Zuqa APM Node.js Agent, your logs must contain one or more of the following identifiers:
 
 * `transaction.id`
 * `trace.id`

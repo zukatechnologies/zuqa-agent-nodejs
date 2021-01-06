@@ -1,38 +1,38 @@
-# elastic-apm-http-client
+# zuqa-apm-http-client
 
-[![npm](https://img.shields.io/npm/v/elastic-apm-http-client.svg)](https://www.npmjs.com/package/elastic-apm-http-client)
+[![npm](https://img.shields.io/npm/v/zuqa-apm-http-client.svg)](https://www.npmjs.com/package/zuqa-apm-http-client)
 [![Build status in Travis](https://travis-ci.org/elastic/apm-nodejs-http-client.svg?branch=master)](https://travis-ci.org/elastic/apm-nodejs-http-client)
 [![Build Status in Jenkins](https://apm-ci.elastic.co/buildStatus/icon?job=apm-agent-nodejs%2Fapm-nodejs-http-client-mbp%2Fmaster)](https://apm-ci.elastic.co/job/apm-agent-nodejs/job/apm-nodejs-http-client-mbp/job/master/)
 [![codecov](https://img.shields.io/codecov/c/github/elastic/apm-nodejs-http-client.svg)](https://codecov.io/gh/elastic/apm-nodejs-http-client)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-A low-level HTTP client for communicating with the Elastic APM intake
+A low-level HTTP client for communicating with the Zuqa APM intake
 API version 2. For support for version 1, use version 5.x of this
 module.
 
 This module is meant for building other modules that needs to
-communicate with Elastic APM.
+communicate with Zuqa APM.
 
-If you are looking to use Elastic APM in your app or website, you'd most
-likely want to check out [the official Elastic APM agent for
-Node.js](https://github.com/elastic/apm-agent-nodejs) instead.
+If you are looking to use Zuqa APM in your app or website, you'd most
+likely want to check out [the official Zuqa APM agent for
+Node.js](https://github.com/zukatechnologies/apm-agent-nodejs) instead.
 
 ## Installation
 
 ```
-npm install elastic-apm-http-client --save
+npm install zuqa-apm-http-client --save
 ```
 
 ## Example Usage
 
 ```js
-const Client = require('elastic-apm-http-client')
+const Client = require('zuqa-apm-http-client')
 
 const client = new Client({
   serviceName: 'My App',
   agentName: 'my-nodejs-agent',
   agentVersion: require('../package.json').version,
-  userAgent: 'My Custom Elastic APM Agent'
+  userAgent: 'My Custom Zuqa APM Agent'
 })
 
 const span = {
@@ -81,7 +81,7 @@ HTTP client configuration:
 
 - `userAgent` - (required) The HTTP user agent that your module should
   identify it self as
-- `secretToken` - The Elastic APM intake API secret token
+- `secretToken` - The Zuqa APM intake API secret token
 - `serverUrl` - The APM Server URL (default: `http://localhost:32140`)
 - `headers` - An object containing extra HTTP headers that should be
   used when making HTTP requests to he APM Server
@@ -162,8 +162,8 @@ Server. The listener is passed the updated config options as a key/value
 object.
 
 Each key is the lowercase version of the environment variable, without
-the `ELASTIC_APM_` prefix, e.g. `transaction_sample_rate` instead of
-`ELASTIC_APM_TRANSACTION_SAMPLE_RATE`.
+the `ZUQA_APM_` prefix, e.g. `transaction_sample_rate` instead of
+`ZUQA_APM_TRANSACTION_SAMPLE_RATE`.
 
 If no central configuration is set up for the given `serviceName` /
 `environment` when the client is started, this event will be emitted

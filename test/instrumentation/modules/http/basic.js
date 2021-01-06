@@ -83,7 +83,7 @@ test('new http.Server', function (t) {
     sendRequest(server)
   })
 
-  t.test('support elastic-apm-traceparent header', function (t) {
+  t.test('support zuqa-apm-traceparent header', function (t) {
     resetAgent(function (data) {
       assert(t, data)
       server.close()
@@ -96,7 +96,7 @@ test('new http.Server', function (t) {
   })
 })
 
-function sendRequest (server, timeout, useElasticHeader) {
+function sendRequest (server, timeout, useZuqaHeader) {
   server.listen(function () {
     var port = server.address().port
     var context = TraceParent.startOrResume(null, {
@@ -105,8 +105,8 @@ function sendRequest (server, timeout, useElasticHeader) {
 
     const headers = {}
     const contextValue = context.toString()
-    if (useElasticHeader) {
-      headers['elastic-apm-traceparent'] = contextValue
+    if (useZuqaHeader) {
+      headers['zuqa-apm-traceparent'] = contextValue
     } else {
       headers.traceparent = contextValue
     }
@@ -131,9 +131,9 @@ function sendRequest (server, timeout, useElasticHeader) {
   })
 }
 
-function onRequest (t, useElasticHeader) {
+function onRequest (t, useZuqaHeader) {
   return function onRequestHandler (req, res) {
-    var traceparent = useElasticHeader ? req.headers['elastic-apm-traceparent'] : req.headers.traceparent
+    var traceparent = useZuqaHeader ? req.headers['zuqa-apm-traceparent'] : req.headers.traceparent
     var parent = TraceParent.fromString(traceparent)
     var context = agent.currentTransaction._context
     t.equal(parent.traceId, context.traceId, 'context trace id matches parent trace id')

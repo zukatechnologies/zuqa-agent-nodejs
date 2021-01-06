@@ -16,18 +16,18 @@ so we can't support Koa directly since we rely on router information for full su
 We currently support the most popular Koa router called https://github.com/alexmingoia/koa-router[koa-router].
 
 If you use another router with your Koa application,
-please https://github.com/elastic/apm-agent-nodejs/issues[open an issue] so we can make sure to support your stack.
-In the meantime, you can <<custom-stack,configure Elastic APM to work with any stack>>.
+please https://github.com/zukatechnologies/apm-agent-nodejs/issues[open an issue] so we can make sure to support your stack.
+In the meantime, you can <<custom-stack,configure Zuqa APM to work with any stack>>.
 
 [float]
 [[koa-installation]]
 ==== Installation
 
-Add the `elastic-apm-node` module as a dependency to your application:
+Add the `zuqa-apm-node` module as a dependency to your application:
 
 [source,bash]
 ----
-npm install elastic-apm-node --save
+npm install zuqa-apm-node --save
 ----
 
 [float]
@@ -43,7 +43,7 @@ Here's a simple Koa example with the Elastic APM agent installed:
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-const apm = require('elastic-apm-node').start({
+const apm = require('zuqa-apm-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',

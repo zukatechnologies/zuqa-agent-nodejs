@@ -42,29 +42,29 @@ include::./lambda.asciidoc[]
 [[starting-the-agent]]
 === Starting the agent
 
-IMPORTANT: The Elastic APM agent for Node.js needs to be started as the first thing in your application - *before any other module is required/imported*.
+IMPORTANT: The Zuqa APM agent for Node.js needs to be started as the first thing in your application - *before any other module is required/imported*.
 This means that you should probably require and start it in your applications main file (usually `index.js`, `server.js`, or `app.js`).
 
-There are two ways to start the Elastic APM agent for Node.js:
+There are two ways to start the Zuqa APM agent for Node.js:
 
-* Require the `elastic-apm-node` module and call the <<apm-start,`start`>> function on the returned agent:
+* Require the `zuqa-apm-node` module and call the <<apm-start,`start`>> function on the returned agent:
 +
 [source,js]
 ----
-var apm = require('elastic-apm-node').start({
+var apm = require('zuqa-apm-node').start({
   // add configuration options here
 })
 ----
-* Require the `elastic-apm-node/start` script:
+* Require the `zuqa-apm-node/start` script:
 +
 [source,js]
 ----
-var apm = require('elastic-apm-node/start')
+var apm = require('zuqa-apm-node/start')
 ----
 +
 If using this approach,
 you can't configure the agent by passing in an options object,
 but instead have to rely on <<configuring-the-agent,one of the other methods of configuration>>.
 
-NOTE: If you are using Babel, you need to use the `elastic-apm-node/start` approach.
+NOTE: If you are using Babel, you need to use the `zuqa-apm-node/start` approach.
 <<es-modules,Read more>>.

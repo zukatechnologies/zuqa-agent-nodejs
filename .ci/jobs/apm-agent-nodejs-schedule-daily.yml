@@ -14,7 +14,7 @@
       script-path: .ci/schedule-daily.groovy
       scm:
       - git:
-          url: git@github.com:elastic/apm-agent-nodejs.git
+          url: git@github.com:zukatechnologies/apm-agent-nodejs.git
           refspec: +refs/heads/*:refs/remotes/origin/* +refs/pull/*/head:refs/remotes/origin/pr/*
           wipe-workspace: 'True'
           name: origin

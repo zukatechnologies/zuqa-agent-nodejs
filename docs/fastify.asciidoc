@@ -9,7 +9,7 @@ endif::[]
 
 === Get started with Fastify
 
-Getting Elastic APM set up for your Fastify app is easy,
+Getting Zuqa APM set up for your Fastify app is easy,
 and there are various ways you can tweak it to fit your needs.
 
 Follow the guide below to get started, and for more advanced topics,
@@ -19,11 +19,11 @@ check out the <<api,API Reference>>.
 [[fastify-installation]]
 ==== Installation
 
-Add the `elastic-apm-node` module as a dependency to your application:
+Add the `zuqa-apm-node` module as a dependency to your application:
 
 [source,bash]
 ----
-npm install elastic-apm-node --save
+npm install zuqa-apm-node --save
 ----
 
 [float]
@@ -34,12 +34,12 @@ It's important that the agent is started before you require *any* other modules 
 
 This means that you should probably require and start the agent in your application's main file (usually `index.js`, `server.js` or `app.js`).
 
-Here's a simple Fastify example with the Elastic APM agent installed:
+Here's a simple Fastify example with the Zuqa APM agent installed:
 
 [source,js]
 ----
 // Add this to the VERY top of the first file loaded in your app
-var apm = require('elastic-apm-node').start({
+var apm = require('zuqa-apm-node').start({
   // Override service name from package.json
   // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: '',

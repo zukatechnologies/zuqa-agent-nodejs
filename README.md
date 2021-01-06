@@ -1,11 +1,11 @@
-# Elastic APM Node.js Agent
+# Zuqa APM Node.js Agent
 
-This is the official Node.js agent for [Elastic APM](https://www.elastic.co/solutions/apm).
+This is the official Node.js agent for [Zuqa APM](https://www.elastic.co/solutions/apm).
 
 If you have any feedback or questions,
 please post them on the [Discuss forum](https://discuss.elastic.co/c/apm).
 
-[![npm](https://img.shields.io/npm/v/elastic-apm-node.svg)](https://www.npmjs.com/package/elastic-apm-node)
+[![npm](https://img.shields.io/npm/v/zuqa-apm-node.svg)](https://www.npmjs.com/package/zuqa-apm-node)
 [![Build Status](https://apm-ci.elastic.co/buildStatus/icon?job=apm-agent-nodejs%2Fapm-agent-nodejs-mbp%2F3.x)](https://apm-ci.elastic.co/job/apm-agent-nodejs/job/apm-agent-nodejs-mbp/job/3.x/)
 [![Build status](https://travis-ci.org/elastic/apm-agent-nodejs.svg?branch=3.x)](https://travis-ci.org/elastic/apm-agent-nodejs)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/standard/standard)
@@ -13,17 +13,17 @@ please post them on the [Discuss forum](https://discuss.elastic.co/c/apm).
 ## Installation
 
 ```
-npm install elastic-apm-node --save
+npm install zuqa-apm-node --save
 ```
 
 ## Quick start
 
-1. To run Elastic APM for your own applications,
+1. To run Zuqa APM for your own applications,
    make sure you have the prerequisites in place first.
-   This agent is compatible with [APM Server](https://github.com/elastic/apm-server) v6.5 and above.
+   This agent is compatible with [APM Server](https://github.com/zukatechnologies/apm-server) v6.5 and above.
    For support for previous releases of the APM Server,
-   use version [1.x](https://github.com/elastic/apm-agent-nodejs/tree/1.x) of the agent.
-   For details see [Getting Started with Elastic APM](https://www.elastic.co/guide/en/apm/get-started)
+   use version [1.x](https://github.com/zukatechnologies/apm-agent-nodejs/tree/1.x) of the agent.
+   For details see [Getting Started with Zuqa APM](https://www.elastic.co/guide/en/apm/get-started)
 
 1. Now follow the documentation links below relevant to your framework or stack to get set up
 
@@ -56,11 +56,11 @@ Contributions are welcome,
 but we recommend that you take a moment and read our [contribution guide](CONTRIBUTING.md) first.
 
 To see what data is being sent to the APM Server,
-use the environment variable `ELASTIC_APM_PAYLOAD_LOG_FILE` (or the config option `payloadLogFile`) to specify a log file,
+use the environment variable `ZUQA_APM_PAYLOAD_LOG_FILE` (or the config option `payloadLogFile`) to specify a log file,
 e.g:
 
 ```
-ELASTIC_APM_PAYLOAD_LOG_FILE=/tmp/payload.ndjson
+ZUQA_APM_PAYLOAD_LOG_FILE=/tmp/payload.ndjson
 ```
 
 Please see [TESTING.md](TESTING.md) for instructions on how to run the test suite.
@@ -69,4 +69,4 @@ Please see [TESTING.md](TESTING.md) for instructions on how to run the test suit
 
 [BSD-2-Clause](LICENSE)
 
-<br>Made with ♥️ and ☕️ by Elastic and our community.
+<br>Made with ♥️ and ☕️ by Zuqa and our community.

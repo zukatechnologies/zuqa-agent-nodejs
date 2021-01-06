@@ -55,7 +55,7 @@ endif::[]
 [float]
 ===== Features
 * feat(mongodb): instrumentation {pull}1423[#1423]
-* fix(package): update elastic-apm-http-client to version 9.0.0 {pull}1419[#1419]
+* fix(package): update zuqa-apm-http-client to version 9.0.0 {pull}1419[#1419]
 * perf: cache 'ids' value of transactions and spans {pull}1434[#1434]
 
 [float]
@@ -257,7 +257,7 @@ endif::[]
 
 [float]
 ===== Bug fixes
-* fix(config): do not use ELASTIC\_APM\_ prefix for k8s {pull}1041[#1041]
+* fix(config): do not use ZUQA\_APM\_ prefix for k8s {pull}1041[#1041]
 * fix(instrumentation): prevent handler leak in bindEmitter {pull}1044[#1044]
 
 [[release-notes-2.10.0]]
@@ -269,7 +269,7 @@ endif::[]
 
 [float]
 ===== Bug fixes
-* fix(package): bump elastic-apm-http-client to ^7.2.2 so Kubernetes metadata gets corrected recorded {pull}1011[#1011]
+* fix(package): bump zuqa-apm-http-client to ^7.2.2 so Kubernetes metadata gets corrected recorded {pull}1011[#1011]
 * fix(ts): add TypeScript typings for new traceparent API {pull}1001[#1001]
 
 [[release-notes-2.9.0]]
@@ -711,7 +711,7 @@ endif::[]
 [[release-notes-0.5.0]]
 ==== 0.5.0 - 2017/11/17
   * refactor(\*): drop support for Node.js <4 {pull}65[#65]
-  * refactor(\*): rename module to elastic-apm-node {pull}71[#71]
+  * refactor(\*): rename module to zuqa-apm-node {pull}71[#71]
   * feat(queue): add fuzziness to flushInterval {pull}63[#63]
 
 [[release-notes-0.4.0]]

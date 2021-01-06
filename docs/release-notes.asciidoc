@@ -1,4 +1,4 @@
-:pull: https://github.com/elastic/apm-agent-nodejs/pull/
+:pull: https://github.com/zukatechnologies/apm-agent-nodejs/pull/
 
 [[release-notes]]
 == Release notes
