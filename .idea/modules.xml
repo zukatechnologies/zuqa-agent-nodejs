@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/apm-agent-nodejs.iml" filepath="$PROJECT_DIR$/.idea/apm-agent-nodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../node/validlog-2fa-service/.idea/validlog-2fa-service.iml" filepath="$PROJECT_DIR$/../../node/validlog-2fa-service/.idea/validlog-2fa-service.iml" />
     </modules>
   </component>
 </project>
